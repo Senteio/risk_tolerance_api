@@ -1,0 +1,20 @@
+# This file tells Git which files/folders to ignore.
+# Added to prevent uploading venv/ and other unnecessary files to GitHub.
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.tmp
+.env
+.env.*
+
+# Streamlit
+.streamlit/
+
+# OS
+.DS_Store
+Thumbs.db
