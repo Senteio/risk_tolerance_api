@@ -17,7 +17,6 @@ In the VS Code Explorer, right‑click the project root → New File → name it
 
 Add the starting header:
 
-# ChatGPT Code Journal for risk_tolerance_api
 
 Stage and commit the file
 
@@ -47,3 +46,25 @@ Each time you finalize a snippet in ChatGPT, paste it into the journal.
 Stage, commit, and push as usual from VS Code’s Source Control panel or terminal.
 
 This keeps your journal integrated into your existing repo without re‑initializing Git or changing your remote setup
+## Pushing a change to Git
+You didn’t push it—yet 🙂. The screenshot shows Everything up‑to‑date, which means there were no committed changes to send. In VS Code the U next to README_v2.md means Untracked (not staged/committed). Moving/creating a file locally doesn’t go to GitHub until you stage + commit it.
+
+Do this in your project root terminal (or via the Source Control panel):
+
+See what Git thinks changed
+
+git status
+
+Stage the moved/added file (and any related deletes/renames)
+
+git add -A
+
+Commit
+
+git commit -m "Add/move README_v2.md to project root"
+
+Push
+
+git push
+# or the first time you set upstream:
+git push -u origin main
