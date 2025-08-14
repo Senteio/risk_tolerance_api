@@ -164,9 +164,57 @@ When you merge back into main
 
 Once your changes are done and tested, you merge the branch into main (either in VS Code, command line, or through a GitHub pull request), so the main branch has the updates.
 
-## Permalinks
-README_v2.md
+
+
+## Doc Snapshot – Phase I (2025-08-12)
+
+**Permalinks:**
+[README_v2.md - Phase I - 12 Aug 2025]
 https://github.com/Senteio/risk_tolerance_api/blob/69508af7388d2175d45f849a5cadc89d005d26dc/README_v2.md
 
-index.py:
+[index.py - Phase I - 12 Aug 2025]
 https://github.com/Senteio/risk_tolerance_api/blob/69508af7388d2175d45f849a5cadc89d005d26dc/index.py
+
+**Key Points from README:**
+- **Purpose:** REST API that returns a 0–100 risk score and risk band (Conservative / Moderate / Aggressive).
+- **Setup:**  
+  ```bash
+  python -m venv .venv
+  . .venv/Scripts/activate   # or source .venv/bin/activate on Mac/Linux
+  pip install -r requirements.txt
+Run:
+
+bash
+Copy
+Edit
+uvicorn index:app --reload --port 8000
+Config: .env variables like MODEL_PATH, LOG_LEVEL, ALLOWED_ORIGINS.
+
+Endpoints overview: /assess, /health.
+
+Constraints: Stateless; no persistence in Phase I.
+
+API Contract (from index.py):
+
+http
+Copy
+Edit
+POST /assess
+Request: { age:int, horizon_years:int, loss_tolerance:string, volatility_pref:string }
+Response: { score:int, band:string, explanations:string[] }
+
+GET /health
+Response: { status:"ok" }
+Terminal Commands:
+
+bash
+Copy
+Edit
+# Run locally
+uvicorn index:app --reload --port 8000
+
+# Run tests
+pytest -q
+
+# Optional: format/lint
+black . && ruff check .
