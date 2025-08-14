@@ -163,3 +163,10 @@ Lets you later just do git push or git pull without specifying the remote and br
 When you merge back into main
 
 Once your changes are done and tested, you merge the branch into main (either in VS Code, command line, or through a GitHub pull request), so the main branch has the updates.
+
+## Permalinks
+README_v2.md
+https://github.com/Senteio/risk_tolerance_api/blob/69508af7388d2175d45f849a5cadc89d005d26dc/README_v2.md
+
+index.py:
+https://github.com/Senteio/risk_tolerance_api/blob/69508af7388d2175d45f849a5cadc89d005d26dc/index.py
