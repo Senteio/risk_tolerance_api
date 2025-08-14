@@ -169,11 +169,10 @@ Once your changes are done and tested, you merge the branch into main (either in
 ## Doc Snapshot – Phase I (2025-08-12)
 
 **Permalinks:**
-[README_v2.md - Phase I - 12 Aug 2025]
-https://github.com/Senteio/risk_tolerance_api/blob/69508af7388d2175d45f849a5cadc89d005d26dc/README_v2.md
+Permalinks:
+- [README_v2.md – Phase I – 2025-08-12](https://github.com/Senteio/risk_tolerance_api/blob/69508af7388d2175d45f849a5cadc89d005d26dc/README_v2.md)
+- [index.py – Phase I – 2025-08-12](https://github.com/Senteio/risk_tolerance_api/blob/69508af7388d2175d45f849a5cadc89d005d26dc/index.py)
 
-[index.py - Phase I - 12 Aug 2025]
-https://github.com/Senteio/risk_tolerance_api/blob/69508af7388d2175d45f849a5cadc89d005d26dc/index.py
 
 **Key Points from README:**
 - **Purpose:** REST API that returns a 0–100 risk score and risk band (Conservative / Moderate / Aggressive).
