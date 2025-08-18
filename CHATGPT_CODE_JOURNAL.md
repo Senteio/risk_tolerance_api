@@ -51,3 +51,12 @@ pytest -q
 
 # Optional: format/lint
 black . && ruff check .
+## For Phase II - pie chart phase:
+- while in venv mode, under risk_tolerance_api folder:  import plotly from the terminal
+```
+pip install plotly
+```
+- run pip freeze to freeze dependencies
+```
+pip freeze > requirements.txt
+```
