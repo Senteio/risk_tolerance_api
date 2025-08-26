@@ -21,8 +21,8 @@ Notes: Phase II added matplotlib integration, updated requirements, and pie char
 - **Purpose:** REST API that returns a 0–100 risk score and risk band (Conservative / Moderate / Aggressive).
 - **Setup:**  
   ```bash
-  python -m venv .venv
-  . .venv/Scripts/activate   # or source .venv/bin/activate on Mac/Linux
+  python -m venv venv
+   .\venv\Scripts\activate   # or source .venv/bin/activate on Mac/Linux
   pip install -r requirements.txt
 Run:
 
