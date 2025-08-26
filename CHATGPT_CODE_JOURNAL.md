@@ -61,10 +61,69 @@ pytest -q
 # Optional: format/lint
 black . && ruff check .
 ## For Phase II - pie chart phase:
+### First start a branch off the main for phase II
+If you create a new branch from main, that branch will include everything you’ve done so far — and you can safely build Phase II (pie chart, Plotly, etc.) on top of it.
+
+That’s exactly how feature branching usually works:
+
+main = stable version
+
+phase-ii (new branch) = experiments / additions
+
+🛠 How to do it
+
+From your project folder in terminal (with venv active or not, doesn’t matter for Git):
+```
+git checkout -b phase-ii
+```
+
+This does two things at once:
+Creates a new branch called phase-ii
+Switches you onto it
+
+Now any changes you make (installing Plotly, modifying risk_tolerance_app.py) will belong to this branch.
+
+🌱 Workflow suggestion
+
+Stay on phase-ii while you add Plotly + pie chart
+
+Commit and push:
+```
+git add .
+git commit -m "Add Plotly pie chart for portfolio allocation"
+git push --set-upstream origin phase-ii
+```
+When you create a new branch (phase-ii)
+By default, Git only makes the branch local.
+Git doesn’t automatically know if you want that new branch on GitHub too, or if it’s just an experimental local branch.
+So the first time you push a new branch, Git asks you to explicitly set the upstream.
+That’s why you had to do:
+```
+git push --set-upstream origin phase-ii
+```
+After this one-time setup, you can push/pull from phase-ii with just:
+```
+git push
+git pull
+```
+Later, when you’re happy, you can merge phase-ii back into main either:
+
+On GitHub (Pull Request, clean & visual)
+
+Or locally with git checkout main && git merge phase-ii
+### Now let's install plotly
 - while in venv mode, under risk_tolerance_api folder:  import plotly from the terminal
+- Got a fatal error in venv mode. venv corrupted - see master journal on how to fix this.
+I removed venv and reinstalled it then I:
+reinstalled my requirements by:
+```
+pip install -r requirements.txt
+```
+Then I added plotly:
 ```
 pip install plotly
 ```
+Then we froze the dependencies
 - run pip freeze to freeze dependencies
 ```
 pip freeze > requirements.txt
