@@ -140,3 +140,21 @@ git push origin phase-ii
 #or push all tags
 git push origin --tags
 ```
+### How do I update my tag if I changed something in a phase of my project.
+First, delete the local tag
+```
+git tag -d phase-ii
+```
+Recreate the latest commit
+```
+git tag phase-ii
+```
+Delete the tag on Github
+```
+git push origin :refs/tags/phase-ii
+```
+Push the new tag
+```
+git push origin phase-ii
+```
+#### This will update the phase-ii tag to point to your latest, cleaned-up commit — with all permalinks included.
