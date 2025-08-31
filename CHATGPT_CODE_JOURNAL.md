@@ -1,6 +1,17 @@
 # ChatGPT Code Journal for risk_tolerance_api
 
-## Doc Snapshot – Phase I (2025-08-12)
+## Doc Snapshot – Phase III (2025-08-31)
+### Phase III Layout
+risk_tolerance_api/
+├─ core/
+│  └─ scoring.py
+├─ backend/
+│  └─ index.py
+├─ frontend/
+│  └─ risk_tolerance_app.py
+├─ requirements.txt
+├─ .gitignore
+└─ README.md
 
 **Permalinks:**
 Permalinks:
@@ -158,3 +169,30 @@ Push the new tag
 git push origin phase-ii
 ```
 #### This will update the phase-ii tag to point to your latest, cleaned-up commit — with all permalinks included.
+
+### Starting Phase III
+- At the point phase-ii worked, start the new branch
+```
+git checkout -b phase-iii
+```
+- Double check you are on the branch
+```
+git branch
+```
+- you should see:
+```
+* phase-iii
+  main
+```
+If not then switch branches
+```
+git switch phase-iii
+```
+- add then commit any changes you made after the phase-ii tag and before pushing if you did any before the push:
+```
+git add .
+git commit -m "added changes"
+Then need to push it upstream the first time:
+```
+git push --set-upstream origin phase-ii
+```
