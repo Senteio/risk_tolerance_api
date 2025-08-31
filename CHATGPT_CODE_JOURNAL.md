@@ -194,5 +194,5 @@ git add .
 git commit -m "added changes"
 Then need to push it upstream the first time:
 ```
-git push --set-upstream origin phase-ii
+git push --set-upstream origin phase-iii
 ```
