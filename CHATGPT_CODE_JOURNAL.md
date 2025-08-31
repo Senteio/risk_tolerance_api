@@ -197,6 +197,7 @@ Then need to push it upstream the first time:
 ```
 git push --set-upstream origin phase-iii
 ```
+## DONT FORGET TO SAVE CHANGES - BEFORE COMMITTING THEM.
 #### If a change gets out of sequence from a push, remember this in your bag of tricks:
  From inside the repo root (should be .../risk_tolerance_api)
  ```
