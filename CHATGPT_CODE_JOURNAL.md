@@ -192,7 +192,32 @@ git switch phase-iii
 ```
 git add .
 git commit -m "added changes"
+```
 Then need to push it upstream the first time:
 ```
 git push --set-upstream origin phase-iii
+```
+#### If a change gets out of sequence from a push, remember this in your bag of tricks:
+ From inside the repo root (should be .../risk_tolerance_api)
+ ```
+git rev-parse --show-toplevel
+```
+#### See exactly what’s unstaged vs staged
+```
+git status
+git diff                 # unstaged changes
+git diff --staged        # staged changes
+```
+
+#### Stage the WHOLE file (not just a hunk)
+```
+git add CHATGPT_CODE_JOURNAL.md
+```
+#### Commit and confirm the file is included
+git commit -m "Journal: update upstream cmd to phase-iii"
+git show --name-status HEAD
+
+#### Push to the branch you’re on (phase-iii)
+```
+git push
 ```
