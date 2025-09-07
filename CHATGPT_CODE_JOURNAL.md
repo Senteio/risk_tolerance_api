@@ -222,3 +222,5 @@ git show --name-status HEAD
 ```
 git push
 ```
+### Prep for deploy to Streamlit
+- Loaded Python 3.12.6. Didn't load newest version because: Most packages (like Streamlit, Pandas, Plotly, etc.) are officially tested with Python 3.11 and 3.12. 3.13 is brand new and may cause compatibility hiccups.
