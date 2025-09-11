@@ -1,9 +1,15 @@
 # frontend/risk_tolerance_app.py
-import os
+import os, sys
 import requests
 import streamlit as st
 import matplotlib.pyplot as plt
 import plotly.express as px
+
+# make repo root importable when running from frontend/
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
 
 from core.scoring import compute_score
 
