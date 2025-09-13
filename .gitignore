@@ -2,22 +2,44 @@
 # Added to prevent uploading venv/ and other unnecessary files to GitHub.
 
 # Python
-venv/
+.venv/
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
+*.pkl
+
+# Logs / temp
 *.log
 *.tmp
+
+# Environment files
 .env
 .env.*
 
 # Streamlit
 .streamlit/
 
+# Jupyter
+.ipynb_checkpoints/
+
+# Data (keep big files out of Git)
+data/
+*.csv
+*.tsv
+*.xlsx
+*.json
+
 # OS
 .DS_Store
 Thumbs.db
-# Extra README files
+
+# Editor
+.vscode/
+
+# Testing
+.pytest_cache/
+
+# Extra README files (optional)
 README_git.md
 README_v2.md
