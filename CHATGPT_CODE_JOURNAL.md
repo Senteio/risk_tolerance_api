@@ -224,3 +224,122 @@ git push
 ```
 ### Prep for deploy to Streamlit
 - Loaded Python 3.12.6. Didn't load newest version because: Most packages (like Streamlit, Pandas, Plotly, etc.) are officially tested with Python 3.11 and 3.12. 3.13 is brand new and may cause compatibility hiccups.
+
+## Finalizing, Merging, Tagging, and deleting onedrive repo
+I haven't tagged phase-iii yet, I haven't merged phase-iii to the main, and I haven't deleted the one drive risk_tolerance_repo. Can you assist me with this?
+ChatGPT said:
+Thought for 13s
+
+Absolutely—here’s a tight, safe sequence to finish Phase III properly: merge → tag → switch Streamlit → clean OneDrive. Follow in order.
+
+1) Finalize Phase III on phase-iii
+# make sure you’re on the right branch and clean
+git checkout phase-iii
+git pull
+git status
+
+# (if anything changed) commit & push
+git add -A
+git commit -m "Phase III: finalize before merge"
+git push origin phase-iii
+
+
+Sanity checks (do these now):
+
+Open the app locally once: streamlit run streamlit_app.py → close it.
+
+Update CHANGELOG.md (ensure the v0.3.0 entry is present) and save.
+
+Verify requirements.txt exists and includes streamlit and other deps.
+
+If you edited CHANGELOG or reqs, commit/push again.
+
+2) Merge phase-iii → main
+
+Option A (recommended): GitHub Pull Request
+
+On GitHub, open a New pull request: base=main, compare=phase-iii.
+
+Ensure the diff looks right → Merge the PR.
+
+Option B (CLI)
+
+git checkout main
+git pull
+git merge --no-ff phase-iii -m "Merge: Phase III release"
+git push origin main
+
+3) Tag the release on main (v0.3.0)
+git checkout main
+git pull
+git tag -a v0.3.0 -m "Phase III release"
+git push origin v0.3.0
+
+
+(If your changelog bottom block has compare links, add the next one later when you cut v0.4.0.)
+
+4) Point Streamlit Cloud to main
+
+In your Streamlit app settings → Branch: main → Redeploy.
+
+Confirm the app boots and basic flows work.
+
+5) Clean up phase-iii branch (optional but tidy)
+# delete remote branch after merge
+git push origin --delete phase-iii
+# delete local branch
+git branch -d phase-iii
+# create next work branch when ready
+git checkout -b phase-iv
+
+6) Safely remove the OneDrive repo copy
+
+Goal: remove the duplicate OneDrive working copy so it stops creating .git/index.lock headaches—without losing anything.
+
+A) Confirm where your current working copy lives
+
+git rev-parse --show-toplevel
+
+
+If the printed path is NOT inside OneDrive (good), proceed.
+
+If it is inside OneDrive, first make a fresh clone somewhere outside OneDrive, verify it works, then decommission the OneDrive copy.
+
+B) Make sure the OneDrive copy has nothing unique
+Open a terminal inside the OneDrive copy (the duplicate folder) and run:
+
+git fetch --all
+# shows commits you have locally that aren't on GitHub (should be none)
+git log --oneline origin/main..HEAD
+git log --oneline origin/phase-iii..HEAD   # if branch exists locally
+
+
+If these two commands print nothing, there are no unpushed commits.
+
+C) Decommission the OneDrive copy
+
+Close VS Code and any terminals in that folder.
+
+Pause OneDrive sync (right-click OneDrive icon → Pause).
+
+Rename the folder first (safe rollback):
+
+e.g., risk_tolerance_api_backup_2025-09-12
+
+Resume OneDrive; wait a minute.
+
+After you’ve confirmed your outside-OneDrive repo works and Streamlit is green, delete the renamed backup folder (send to Recycle Bin).
+
+Tip: If Windows blocks deletion, reboot once or run PowerShell as Admin:
+
+Remove-Item "C:\Users\<you>\OneDrive\...path...\risk_tolerance_api_backup_2025-09-12" -Recurse -Force
+
+7) Quick verification checklist
+
+GitHub main shows the Phase III files and the CHANGELOG.md entry for v0.3.0.
+
+GitHub Releases/Tags shows v0.3.0.
+
+Streamlit app is redeployed from main and loads.
+
+No more .git/index.lock errors locally.
