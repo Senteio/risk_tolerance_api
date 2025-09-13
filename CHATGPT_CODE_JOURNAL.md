@@ -233,12 +233,12 @@ Thought for 13s
 Absolutely—here’s a tight, safe sequence to finish Phase III properly: merge → tag → switch Streamlit → clean OneDrive. Follow in order.
 
 1) Finalize Phase III on phase-iii
-# make sure you’re on the right branch and clean
+### make sure you’re on the right branch and clean
 git checkout phase-iii
 git pull
 git status
 
-# (if anything changed) commit & push
+### (if anything changed) commit & push
 git add -A
 git commit -m "Phase III: finalize before merge"
 git push origin phase-iii
@@ -285,11 +285,11 @@ In your Streamlit app settings → Branch: main → Redeploy.
 Confirm the app boots and basic flows work.
 
 5) Clean up phase-iii branch (optional but tidy)
-# delete remote branch after merge
+### delete remote branch after merge
 git push origin --delete phase-iii
-# delete local branch
+### delete local branch
 git branch -d phase-iii
-# create next work branch when ready
+### create next work branch when ready
 git checkout -b phase-iv
 
 6) Safely remove the OneDrive repo copy
@@ -309,7 +309,7 @@ B) Make sure the OneDrive copy has nothing unique
 Open a terminal inside the OneDrive copy (the duplicate folder) and run:
 
 git fetch --all
-# shows commits you have locally that aren't on GitHub (should be none)
+### shows commits you have locally that aren't on GitHub (should be none)
 git log --oneline origin/main..HEAD
 git log --oneline origin/phase-iii..HEAD   # if branch exists locally
 
