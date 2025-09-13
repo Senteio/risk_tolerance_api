@@ -1,3 +1,15 @@
+Save all files (Ctrl+S in VS Code).
+
+git status → make sure modified files show.
+
+git add -A
+
+git commit -m "..."
+
+git push origin <branch>
+
+Refresh GitHub → check Preview tab shows the new contents.
+
 # Deployment Runbook (Phase III → Cloud → Main)
 
 
