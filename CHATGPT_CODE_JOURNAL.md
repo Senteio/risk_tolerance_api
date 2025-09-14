@@ -279,10 +279,22 @@ git push origin v0.3.0
 (If your changelog bottom block has compare links, add the next one later when you cut v0.4.0.)
 
 4) Point Streamlit Cloud to main
+- Select Create app
+- Select Deploy public app from GitHub
+- Fill the form:
 
-In your Streamlit app settings → Branch: main → Redeploy.
+    Repository: Senteio/risk_tolerance_api
 
-Confirm the app boots and basic flows work.
+    Branch: main
+
+    Main file path: frontend/risk_tolerance_app.py
+
+    Rename the app name different than phase-iii
+
+    Deploy
+
+
+    Confirm the app boots and basic flows work.
 
 5) Clean up phase-iii branch (optional but tidy)
 ### delete remote branch after merge
