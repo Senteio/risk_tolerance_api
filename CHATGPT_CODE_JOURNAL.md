@@ -355,3 +355,123 @@ GitHub Releases/Tags shows v0.3.0.
 Streamlit app is redeployed from main and loads.
 
 No more .git/index.lock errors locally.
+
+## Code_JOURNAL Entry — Fixing Changelog Compare Links & Preparing for Phase IV
+
+### Context
+Discovered that CHANGELOG.md compare links (e.g., `v0.2.0...v0.3.0`) showed "Nothing to compare" on GitHub. Needed to align Git tags properly with each phase release.
+
+---
+
+### Problem
+- GitHub compare links did not work.
+- Root cause: earlier tags (`v0.1.0`, `v0.2.0`) were never created/pushed, so GitHub had no references to diff against.
+
+---
+
+### Successful Steps
+
+#### 1. Verified Current Tags
+```bash
+git fetch --tags
+git tag -l
+Confirmed only v0.3.0 existed (tagged on the Phase III merge commit).
+
+2. Found Parent Commit for Phase II
+Since Phase III was tagged at merge commit 3730b6a, Phase II = the first parent of that merge.
+⚠️ On Windows CMD, ^ is an escape character — must use ~1 instead.
+
+```
+git show -s --format=%H 3730b6a~1
+```
+→ Returned <SHA_PHASE_II>
+
+Tagged Phase II:
+```
+git tag -a v0.2.0 <SHA_PHASE_II> -m "Phase II release (pre-Phase III)"
+git push origin v0.2.0
+```
+3. Tagged Phase I (Initial MVP)
+Phase I = the app before charts, when risk_tolerance_app.py existed at project root.
+
+Find when the file was added:
+```
+git log --diff-filter=A --reverse --pretty=oneline -- risk_tolerance_app.py
+```
+→ Took the first commit hash.
+
+Tagged Phase I:
+```
+git tag -a v0.1.0 <SHA_PHASE_I> -m "Phase I release (initial MVP, risk score only)"
+git push origin v0.1.0
+```
+4. Verified Tags & Compare Links
+```
+git tag -l -n1
+git show --no-patch v0.1.0
+git show --no-patch v0.2.0
+git show --no-patch v0.3.0
+```
+On GitHub:
+```
+.../compare/v0.1.0...v0.2.0 → Phase II changes (pie chart, Plotly).
+
+.../compare/v0.2.0...v0.3.0 → Phase III changes (frontend restructure + cloud deploy).
+
+Links now render correctly in CHANGELOG.md.
+
+## Phase IV Instructions (for later)
+While developing on phase-iv
+Keep [Unreleased] section in CHANGELOG.md updated with Added/Changed/Fixed/Removed.
+
+When ready to release:
+Merge to main
+```
+git checkout main && git pull
+git merge --no-ff phase-iv -m "Merge: Phase IV release"
+git push origin main
+```
+Cut changelog
+Move [Unreleased] into:
+
+## [v0.4.0] - YYYY-MM-DD
+
+Leave a new empty [Unreleased] section at the top.
+
+Tag
+```
+git tag -a v0.4.0 -m "Phase IV release"
+git push origin v0.4.0
+```
+Update link references at bottom of CHANGELOG.md
+
+```
+[Unreleased]: https://github.com/Senteio/risk_tolerance_api/compare/v0.4.0...HEAD
+[v0.4.0]: https://github.com/Senteio/risk_tolerance_api/compare/v0.3.0...v0.4.0
+[v0.3.0]: https://github.com/Senteio/risk_tolerance_api/compare/v0.2.0...v0.3.0
+[v0.2.0]: https://github.com/Senteio/risk_tolerance_api/compare/v0.1.0...v0.2.0
+[v0.1.0]: https://github.com/Senteio/risk_tolerance_api/releases/tag/v0.1.0
+```
+Deploy prod from main
+
+Streamlit Cloud → Create app → Deploy public app from GitHub
+
+Repo: Senteio/risk_tolerance_api
+
+Branch: main
+
+File path: frontend/risk_tolerance_app.py
+
+URL: reuse prod URL (rename/delete old app if needed)
+
+# Lessons Learned
+Always tag after merging into main so tags align with deployed code.
+
+Windows CMD requires ~1 instead of ^1 when referencing parent commits.
+
+Keep [Unreleased] → new version section workflow consistent in CHANGELOG.md.
+
+Append link references at the very bottom of CHANGELOG.md so GitHub compare links always resolve.
+
+yaml
+Copy code
