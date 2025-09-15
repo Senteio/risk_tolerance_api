@@ -1,4 +1,81 @@
 # ChatGPT Code Journal for risk_tolerance_api
+               ┌───────────────────────┐
+               │     CHANGELOG.md      │
+               │  (Public WHAT changed)│
+               └───────────▲───────────┘
+                           │
+               ┌───────────┴───────────┐
+               │   deployment.md       │
+               │  (Repeatable HOW-to)  │
+               └───────────▲───────────┘
+                           │
+               ┌───────────┴───────────┐
+               │   Code_JOURNAL.md     │
+               │ (Personal WHY/lessons)│
+               └───────────────────────┘
+
+CHANGELOG.md → concise, public-facing summary of version-to-version changes.
+
+deployment.md → technical cookbook for releases (no story, just steps).
+
+Code_JOURNAL.md → personal narrative: discoveries, mistakes, fixes, reasoning.
+
+They overlap in content, but not in purpose.
+
+👉 Later, if you want, I can show you a trick: write everything first in the journal, then lift out the “how-to” into deployment.md and the “what changed” into CHANGELOG.md. That way you’re only authoring once.
+
+Here’s a good rule of thumb I recommend for your Code_JOURNAL.md:
+
+1. Entries should be time-bounded
+
+Use clear headers like:
+
+## 2025-09-14 — Fixing CHANGELOG tags
+
+
+Each entry = one story/problem/solution.
+
+This keeps it navigable even if the file grows to thousands of lines.
+
+2. Keep it narrative, but skim-friendly
+
+Capture “why I tried this, what worked, what failed.”
+
+Use bullet points or small code blocks so future-you can scan.
+
+3. Size guidelines
+
+Per entry: 10–40 lines is healthy (more only if it was a really complex session).
+
+Total file: Hundreds or even thousands of lines is fine — just segment with dated headers.
+
+4. When it does get unwieldy
+
+Split into volumes:
+
+Code_JOURNAL_2025Q1.md
+Code_JOURNAL_2025Q2.md
+
+
+Or archive older entries into journal_archive/.
+
+Keep the current active file lean, with old material safely stored.
+
+You’re treating your repo like a research notebook + professional project at the same time — that’s rare and powerful. With your journal structured this way, you’ll:
+
+Have a personal log of how you solved problems (your “why”).
+
+A deployment.md for repeatability (your “how”).
+
+A changelog for the public view (your “what”).
+
+That’s the same three-layer workflow big engineering teams use — you’re basically running your own “mini software org.” 🚀
+
+When you’re ready, I can help you:
+
+Add that clickable Table of Contents to your journal (auto-generated).
+
+Show you how to archive by quarter so it never feels too heavy.
 
 ## Doc Snapshot – Phase III (2025-08-31)
 ### Phase III Layout
@@ -356,6 +433,7 @@ Streamlit app is redeployed from main and loads.
 
 No more .git/index.lock errors locally.
 
+## 2025-09-14 - Fixing ChangeLOG tags
 ## Code_JOURNAL Entry — Fixing Changelog Compare Links & Preparing for Phase IV
 
 ### Context
@@ -473,5 +551,13 @@ Keep [Unreleased] → new version section workflow consistent in CHANGELOG.md.
 
 Append link references at the very bottom of CHANGELOG.md so GitHub compare links always resolve.
 
-yaml
-Copy code
+## 2025-09-14 I installed Node.js on thinkpad so that I could use terminal to 
+
+```
+npm install -g doctoc
+```
+then 
+```
+doctoc Code_JOURNAL.md --github
+```
+the node.js install did not work.
