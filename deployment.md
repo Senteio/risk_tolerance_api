@@ -236,3 +236,122 @@ vs
 ```
 git log <branch>
 ```
+
+# Deployment Notes
+
+## Repository Cleanup
+- Removed the stale **`phase-iii` branch** after completing deployment to Streamlit Cloud.  
+- Deleted the duplicate **risk_tolerance_api repo** that was synced through OneDrive to prevent conflicts.  
+
+---
+
+## Folder Structure
+Development work is consolidated under:
+
+C:\dev\repos
+└── financial_workspace\ ← container folder (not a repo)
+└── risk_tolerance_api\ ← active GitHub repo
+
+swift
+Copy code
+
+- `financial_workspace` is used only as a container for financial projects.  
+- `risk_tolerance_api` remains the primary GitHub repository.  
+
+---
+
+## VS Code Workspace Setup
+Created a `Financial.code-workspace` file in `C:\dev\repos\`:
+
+```json
+{
+  "folders": [
+    { "path": "C:\\dev\\repos\\financial_workspace" }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/.venv": true,
+      "**/__pycache__": true,
+      "**/.git": true
+    }
+  }
+}
+Opening this workspace file loads all repos/projects inside financial_workspace automatically.
+
+Keeps the environment consistent and future-proof as additional repos are added.
+
+Opening the Workspace
+Use File → Open Workspace from File… in VS Code.
+
+Select Financial.code-workspace.
+
+Explorer shows the financial_workspace container and its repos (e.g., risk_tolerance_api).
+
+Shortcut for Faster Access
+Created a Windows shortcut to launch VS Code directly into the workspace:
+
+swift
+Copy code
+"C:\Users\steve\AppData\Local\Programs\Microsoft VS Code\Code.exe" "C:\dev\repos\Financial.code-workspace"
+Named: Financial Workspace.
+
+Pinned to Taskbar for one-click access.
+
+Streamlit Cloud Deployment
+Prerequisites
+A GitHub repo (risk_tolerance_api) with all changes committed and pushed.
+
+requirements.txt updated with dependencies.
+
+Main app entry point (e.g., app.py) working locally with streamlit run app.py.
+
+Deployment Steps
+Push code to GitHub
+
+bash
+Copy code
+git add .
+git commit -m "Deploying update"
+git push origin main
+Tag a release (optional but recommended)
+
+bash
+Copy code
+git tag -a v1.0 -m "First production release"
+git push origin v1.0
+Log in to Streamlit Cloud
+
+Go to share.streamlit.io.
+
+Connect your GitHub account (if not already connected).
+
+Create a new app
+
+Select the repo: risk_tolerance_api.
+
+Choose the branch: main.
+
+Set the main file path: app.py (or equivalent).
+
+Click Deploy.
+
+Verify deployment
+
+Wait for build to complete.
+
+Open the provided URL to confirm the app runs.
+
+Post-Deployment Notes
+Once deployment is successful, delete old feature branches (e.g., phase-iii) to keep the repo clean.
+
+Maintain semantic version tags (v1.0, v1.1, etc.) for traceability.
+
+If updating dependencies, re-deploy with an updated requirements.txt.
+
+yaml
+Copy code
+
+---
+
+👉 This gives you a **repeatable “from scratch” deployment checklist** inside `deployment.md`.  
+Would you like me to also add a **troubleshooting section** (common Streamlit errors: package not found, branch not building, secrets not set, etc.) so you don’t have to dig for fixes when something breaks?

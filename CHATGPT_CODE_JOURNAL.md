@@ -561,3 +561,81 @@ then
 doctoc Code_JOURNAL.md --github
 ```
 the node.js install did not work.
+
+## [2025-09-17] Workspace & Repo Cleanup
+
+### 1. Deleted stale branches & repos
+- Removed the **`phase-iii` branch** after completing Streamlit Cloud deployment (kept history clean).  
+- Deleted the duplicate **risk_tolerance_api repo** that had been syncing to OneDrive (to avoid sync conflicts with GitHub).  
+
+---
+
+### 2. New folder layout
+Set up a clean hierarchy under `C:\dev\repos\`:
+
+C:\dev\repos
+└── financial_workspace\ ← container folder (not a repo)
+└── risk_tolerance_api\ ← actual repo
+
+
+- `repos` holds all GitHub projects.  
+- `financial_workspace` is a **container folder** for financial repos/projects.  
+- `risk_tolerance_api` remains a proper GitHub repo inside the container.  
+- This avoids cloud sync issues and keeps repos organized in one place.  
+
+---
+
+### 3. Multi-root workspace setup in VS Code
+Created a `Financial.code-workspace` file in `C:\dev\repos\`:
+
+```json
+{
+  "folders": [
+    { "path": "C:\\dev\\repos\\financial_workspace" }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/.venv": true,
+      "**/__pycache__": true,
+      "**/.git": true
+    }
+  }
+}
+```
+Loads the entire financial_workspace container, so all repos inside (like risk_tolerance_api) appear in VS Code automatically.
+
+Keeps things future-proof as more repos are added — no need to edit JSON again.
+
+4. Opening the workspace from JSON
+Steps:
+
+File → Open Workspace from File…
+
+Select Financial.code-workspace.
+
+Result: VS Code Explorer shows the financial_workspace container and all repos/projects inside (e.g., risk_tolerance_api).
+
+5. Desktop shortcut for instant access
+Created a Windows shortcut:
+
+swift
+Copy code
+"C:\Users\steve\AppData\Local\Programs\Microsoft VS Code\Code.exe" "C:\dev\repos\Financial.code-workspace"
+Named it Financial Workspace.
+
+Pinned to Taskbar for one-click access.
+
+Opens directly into the workspace without navigating through folder layers.
+
+✅ Key Takeaway
+Now running a clean, portable dev environment:
+
+Organized repo hierarchy with a container folder for financial projects.
+
+Single JSON workspace definition to auto-load all repos inside.
+
+One-click shortcut for daily development.
+
+Avoids OneDrive sync issues.
+
+Git history cleaned up (removed stale branch).
