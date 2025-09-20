@@ -103,6 +103,65 @@ Permalinks:
 
 Notes: Phase II added matplotlib integration, updated requirements, and pie chart visualization.
 
+### Updating permalinks for all 3 phases here.
+
+## Doc Snapshot – Phase I (2025-08-12)
+
+Phase I Layout
+risk_tolerance_api/
+├── index.py
+├── requirements.txt
+└── README.md
+
+
+Permalinks:  
+- [README.md – Phase I](https://github.com/Senteio/risk_tolerance_api/blob/v0.1.0/README_git.md)  
+- [index.py – Phase I](https://github.com/Senteio/risk_tolerance_api/blob/v0.1.0/README_git.md)  
+- Commit permalink: [<commit-hash>](https://github.com/Senteio/risk_tolerance_api/commit/af51cca55b2854980982300d3d83e35dce974763)  
+
+Notes:  
+- Initial API skeleton created.  
+- Health endpoint (`/health`) returned `{ "status": "ok" }`.  
+- No persistence; stateless design in place.  
+
+---
+
+## Doc Snapshot – Phase II (2025-08-xx)
+
+## Phase II – Tag Snapshot
+- GitHub Tag: [phase-ii](https://github.com/Senteio/risk_tolerance_api/tree/phase-ii)
+- App file at Phase II: [risk_tolerance_app.py](https://github.com/Senteio/risk_tolerance_api/blob/phase-ii/risk_tolerance_app.py)
+- Index file at Phase II: [index.py](https://github.com/Senteio/risk_tolerance_api/blob/phase-ii/index.py)
+- Commit permalink: [a3936b3](https://github.com/Senteio/risk_tolerance_api/commit/a3936b3)
+
+Notes: Phase II added matplotlib integration, updated requirements, and pie chart visualization.
+
+---
+
+## Doc Snapshot – Phase III (2025-08-31)
+
+Phase III Layout
+risk_tolerance_api/
+├── core/
+│ └── scoring.py
+├── backend/
+├── frontend/
+├── index.py
+├── risk_tolerance_app.py
+├── requirements.txt
+├── .gitignore
+└── README.md
+
+
+Permalinks:  
+- [README_v2.md – Phase III](<permalink-to-phase-III-README>)  
+- [scoring.py – Phase III](https://github.com/Senteio/risk_tolerance_api/blob/main/core/scoring.py)  
+- Commit permalink: [<commit-hash>](https://github.com/Senteio/risk_tolerance_api/commit/3730b6a70860162d968b8a5cf2a36d92c2ca260a)  
+
+Notes:  
+- Added matplotlib integration.  
+- Updated dependencies.  
+- Pie chart visualization introduced.  
 
 
 **Key Points from README:**
