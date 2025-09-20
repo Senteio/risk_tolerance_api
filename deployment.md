@@ -276,6 +276,7 @@ Created a `Financial.code-workspace` file in `C:\dev\repos\`:
     }
   }
 }
+```
 Opening this workspace file loads all repos/projects inside financial_workspace automatically.
 
 Keeps the environment consistent and future-proof as additional repos are added.
@@ -361,6 +362,56 @@ Copy code
 
 ```json
 "python.defaultInterpreterPath": "C:\\dev\\repos\\financial_workspace\\risk_tolerance_api\\.venv\\Scripts\\python.exe"
+```
+
+## Package Management with requirements.txt
+
+### Installing Packages
+Always install new packages **inside the active venv** so they don’t leak into the global Python environment:
+
+```
+pip install package_name
+Freezing Dependencies
+```
+After installing or upgrading packages, update requirements.txt so the environment is reproducible:
+```
+pip freeze > requirements.txt
+```
+This captures the exact versions of all installed packages.
+
+Rebuilding Environment from requirements.txt
+When setting up the project on a new machine (or rebuilding a venv):
+
+```
+pip install -r requirements.txt
+```
+This ensures the new environment matches the original exactly.
+
+Best Practice with Git
+✅ Commit requirements.txt to source control.
+
+❌ Do NOT commit .venv/ (should be excluded in .gitignore).
+
+This way, collaborators (or future you) can recreate the environment without shipping unnecessary binaries.
+
+Example Workflow
+Activate venv (auto-activated in VS Code).
+
+Install a package:
+```
+pip install pandas
+```
+Update requirements.txt:
+
+```
+pip freeze > requirements.txt
+```
+Commit and push:
+
+```
+git add requirements.txt
+git commit -m "Add pandas dependency"
+git push origin main
 ```
 
 👉 This gives you a **repeatable “from scratch” deployment checklist** inside `deployment.md`.  
