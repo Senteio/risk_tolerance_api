@@ -51,6 +51,35 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+# Changelog
+
+All notable changes to this project will be documented in this file.  
+This project adheres to [Semantic Versioning](https://semver.org/).
+
+---
+
+## [Unreleased]
+
+---
+
+## [1.0.0] - 2025-09-17
+### Added
+- Initial deployment of `risk_tolerance_api` to Streamlit Cloud.
+- Created `Financial.code-workspace` file to manage financial projects in VS Code.
+- Desktop shortcut for one-click launch into the financial workspace.
+
+### Changed
+- Consolidated folder structure under:
+C:\dev\repos\financial_workspace\
+
+markdown
+Copy code
+- Moved repo out of OneDrive to prevent sync conflicts.
+
+### Removed
+- Deleted obsolete `phase-iii` branch post-deployment.
+- Removed duplicate repo previously stored in OneDrive.
+
 <!-- 🔗 Release Links (GitHub compare/tag) -->
 
 <!-- Keep link refs at the very bottom so markdown autolinks resolve. Do not add content below this block. -->

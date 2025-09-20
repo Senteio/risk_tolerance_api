@@ -353,5 +353,15 @@ Copy code
 
 ---
 
+## Virtual Environment Management
+
+### Auto-Activation in VS Code
+- VS Code (with the Python extension) automatically detects a `.venv` folder inside the project and activates it in the integrated terminal.  
+- The interpreter path is also defined in `Financial.code-workspace`:
+
+```json
+"python.defaultInterpreterPath": "C:\\dev\\repos\\financial_workspace\\risk_tolerance_api\\.venv\\Scripts\\python.exe"
+```
+
 👉 This gives you a **repeatable “from scratch” deployment checklist** inside `deployment.md`.  
 Would you like me to also add a **troubleshooting section** (common Streamlit errors: package not found, branch not building, secrets not set, etc.) so you don’t have to dig for fixes when something breaks?
