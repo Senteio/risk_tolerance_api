@@ -77,32 +77,6 @@ Add that clickable Table of Contents to your journal (auto-generated).
 
 Show you how to archive by quarter so it never feels too heavy.
 
-## Doc Snapshot – Phase III (2025-08-31)
-### Phase III Layout
-risk_tolerance_api/
-├─ core/
-│  └─ scoring.py
-├─ backend/
-│  └─ index.py
-├─ frontend/
-│  └─ risk_tolerance_app.py
-├─ requirements.txt
-├─ .gitignore
-└─ README.md
-
-**Permalinks:**
-Permalinks:
-- [README_v2.md – Phase I – 2025-08-12](https://github.com/Senteio/risk_tolerance_api/blob/69508af7388d2175d45f849a5cadc89d005d26dc/README_v2.md)
-- [index.py – Phase I – 2025-08-12](https://github.com/Senteio/risk_tolerance_api/blob/69508af7388d2175d45f849a5cadc89d005d26dc/index.py)
-
-## Phase II – Tag Snapshot
-- GitHub Tag: [phase-ii](https://github.com/Senteio/risk_tolerance_api/tree/phase-ii)
-- App file at Phase II: [risk_tolerance_app.py](https://github.com/Senteio/risk_tolerance_api/blob/phase-ii/risk_tolerance_app.py)
-- Index file at Phase II: [index.py](https://github.com/Senteio/risk_tolerance_api/blob/phase-ii/index.py)
-- Commit permalink: [a3936b3](https://github.com/Senteio/risk_tolerance_api/commit/a3936b3)
-
-Notes: Phase II added matplotlib integration, updated requirements, and pie chart visualization.
-
 ### Updating permalinks for all 3 phases here.
 
 ## Doc Snapshot – Phase I (2025-08-12)
