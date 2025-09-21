@@ -416,3 +416,12 @@ git push origin main
 
 👉 This gives you a **repeatable “from scratch” deployment checklist** inside `deployment.md`.  
 Would you like me to also add a **troubleshooting section** (common Streamlit errors: package not found, branch not building, secrets not set, etc.) so you don’t have to dig for fixes when something breaks?
+
+## Post Deployment Notes
+
+### Phase II Milestone (2025-09-05)
+
+- **Journal Permalink** → [View Journal at Phase II](https://github.com/Senteio/risk_tolerance_api/blob/fa6db53e3a2e6f2fd5979b9be1f7bda244bdf141/CODE_JOURNAL.md)
+- **Commit Permalink** → [View Code at Phase II](https://github.com/Senteio/risk_tolerance_api/commit/fa6db53e3a2e6f2fd5979b9be1f7bda244bdf141)
+
+✅ Snapshot of both the written documentation and the repo state at this milestone.

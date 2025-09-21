@@ -698,3 +698,12 @@ One-click shortcut for daily development.
 Avoids OneDrive sync issues.
 
 Git history cleaned up (removed stale branch).
+
+## Milestones Snapshots
+
+### Phase II Milestone (2025-09-05)
+
+- **Journal Permalink** → [View Journal at Phase II](https://github.com/Senteio/risk_tolerance_api/blob/fa6db53e3a2e6f2fd5979b9be1f7bda244bdf141/CODE_JOURNAL.md)
+- **Commit Permalink** → [View Code at Phase II](https://github.com/Senteio/risk_tolerance_api/commit/fa6db53e3a2e6f2fd5979b9be1f7bda244bdf141)
+
+✅ Snapshot of both the written documentation and the repo state at this milestone.

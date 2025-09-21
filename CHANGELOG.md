@@ -40,6 +40,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 * Restructured project to support modularized code and clearer imports.
 
+### Added
+- Completed Phase II functionality.
+- Documentation updates in CODE_JOURNAL.md.
+
+- **Journal Permalink** → [View Journal at Phase II](https://github.com/Senteio/risk_tolerance_api/blob/fa6db53e3a2e6f2fd5979b9be1f7bda244bdf141/CODE_JOURNAL.md)
+- **Commit Permalink** → [View Code at Phase II](https://github.com/Senteio/risk_tolerance_api/commit/fa6db53e3a2e6f2fd5979b9be1f7bda244bdf141)
+
+✅ Snapshot of both the written documentation and the repo state at this milestone.
+
+
 ---
 
 ## [v0.1.0] - 2025-07-05
