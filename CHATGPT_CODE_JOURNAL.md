@@ -677,7 +677,7 @@ Git history cleaned up (removed stale branch).
 
 ### Phase II Milestone (2025-09-05)
 
-- **Journal Permalink** → [View Journal at Phase II](https://github.com/Senteio/risk_tolerance_api/commit/fa6db53e3a2e6f2fd5979b9be1f7bda244bdf141#diff-df711951d1e86209e1004a54d5edee5ffe38168286c0cd77f11b4c5608e9604a)
+- **Journal Permalink** → [View Journal at Phase II](https://github.com/Senteio/risk_tolerance_api/blob/fa6db53e3a2e6f2fd5979b9be1f7bda244bdf141/CHATGPT_CODE_JOURNAL.md)
 - **Commit Permalink** → [View Code at Phase II](https://github.com/Senteio/risk_tolerance_api/commit/fa6db53e3a2e6f2fd5979b9be1f7bda244bdf141)
 
 ✅ Snapshot of both the written documentation and the repo state at this milestone.
