@@ -419,9 +419,19 @@ Would you like me to also add a **troubleshooting section** (common Streamlit er
 
 ## Post Deployment Notes
 
+### Phase I Milestone (2025-08-11)
+
+- **Journal Permalink** → [View Readme at Phase I](https://github.com/Senteio/risk_tolerance_api/blob/af51cca55b2854980982300d3d83e35dce974763/README_git.md)
+- **Commit Permalink** → [View Code at Phase II](https://github.com/Senteio/risk_tolerance_api/commit/af51cca55b2854980982300d3d83e35dce974763#diff-0625a7240f5cf92632faa7614988ff901cdad9e2b57270d8f8e4e1e590089d00)
+
 ### Phase II Milestone (2025-09-05)
 
-- **Journal Permalink** → [View Journal at Phase II](https://github.com/Senteio/risk_tolerance_api/blob/fa6db53e3a2e6f2fd5979b9be1f7bda244bdf141/CODE_JOURNAL.md)
+- **Journal Permalink** → [View Journal at Phase II](https://github.com/Senteio/risk_tolerance_api/blob/fa6db53e3a2e6f2fd5979b9be1f7bda244bdf141/CHATGPT_CODE_JOURNAL.md)
 - **Commit Permalink** → [View Code at Phase II](https://github.com/Senteio/risk_tolerance_api/commit/fa6db53e3a2e6f2fd5979b9be1f7bda244bdf141)
 
-✅ Snapshot of both the written documentation and the repo state at this milestone.
+### Phase III Milestone (2025-09-13)
+
+- **Journal Permalink** → [View Journal at Phase III](https://github.com/Senteio/risk_tolerance_api/blob/2dfc25080bfa593a1fbfb75c82b643760addbefb/CHATGPT_CODE_JOURNAL.md)
+- **Commit Permalink** → [View Code at Phase III](https://github.com/Senteio/risk_tolerance_api/commit/2dfc25080bfa593a1fbfb75c82b643760addbefb)
+
+✅ Snapshot of both the written documentation and the repo state at this milestone. This is also in Code_Journal.
