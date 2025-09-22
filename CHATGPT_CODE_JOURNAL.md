@@ -80,13 +80,13 @@ Show you how to archive by quarter so it never feels too heavy.
 ### Updating permalinks for all 3 phases here.
 
 ## Doc Snapshot – Phase I (2025-08-12)
-
+```
 Phase I Layout
 risk_tolerance_api/
 ├── index.py
 ├── requirements.txt
 └── README.md
-
+```
 
 Permalinks:  
 - [README.md – Phase I](https://github.com/Senteio/risk_tolerance_api/blob/v0.1.0/README_git.md)  
@@ -113,7 +113,7 @@ Notes: Phase II added matplotlib integration, updated requirements, and pie char
 ---
 
 ## Doc Snapshot – Phase III (2025-08-31)
-
+```
 Phase III Layout
 risk_tolerance_api/
 ├── core/
@@ -125,7 +125,7 @@ risk_tolerance_api/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
-
+```
 
 Permalinks:  
 - [README_v2.md – Phase III](<permalink-to-phase-III-README>)  
