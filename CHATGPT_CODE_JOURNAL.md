@@ -18,7 +18,7 @@ CHANGELOG.md → concise, public-facing summary of version-to-version changes.
 
 deployment.md → technical cookbook for releases (no story, just steps).
 
-Code_JOURNAL.md → personal narrative: discoveries, mistakes, fixes, reasoning.
+Code_JOURNAL.md → personal narrative: discoveries, mistakes, fixes, reasoning and Milestones (at end of Journal)
 
 They overlap in content, but not in purpose.
 
@@ -674,10 +674,25 @@ Avoids OneDrive sync issues.
 Git history cleaned up (removed stale branch).
 
 ## Milestones Snapshots
+1. In git,Go to tag for the milestone
+2. In the tag, click on the commit hash
+3. Copy the URL for that commit & paste into commit permalink (below)
+4. Click on "Browse Files" in top right 
+5. Click on desired file (Journal) & then copy that URL into the View Journal permalink.
+
+### Phase I Milestone (2025-08-11)
+
+- **Journal Permalink** → [View Readme at Phase I](https://github.com/Senteio/risk_tolerance_api/blob/af51cca55b2854980982300d3d83e35dce974763/README_git.md)
+- **Commit Permalink** → [View Code at Phase II](https://github.com/Senteio/risk_tolerance_api/commit/af51cca55b2854980982300d3d83e35dce974763#diff-0625a7240f5cf92632faa7614988ff901cdad9e2b57270d8f8e4e1e590089d00)
 
 ### Phase II Milestone (2025-09-05)
 
 - **Journal Permalink** → [View Journal at Phase II](https://github.com/Senteio/risk_tolerance_api/blob/fa6db53e3a2e6f2fd5979b9be1f7bda244bdf141/CHATGPT_CODE_JOURNAL.md)
 - **Commit Permalink** → [View Code at Phase II](https://github.com/Senteio/risk_tolerance_api/commit/fa6db53e3a2e6f2fd5979b9be1f7bda244bdf141)
+
+### Phase III Milestone (2025-09-13)
+
+- **Journal Permalink** → [View Journal at Phase III](https://github.com/Senteio/risk_tolerance_api/blob/2dfc25080bfa593a1fbfb75c82b643760addbefb/CHATGPT_CODE_JOURNAL.md)
+- **Commit Permalink** → [View Code at Phase III](https://github.com/Senteio/risk_tolerance_api/commit/2dfc25080bfa593a1fbfb75c82b643760addbefb)
 
 ✅ Snapshot of both the written documentation and the repo state at this milestone.
